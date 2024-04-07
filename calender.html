@@ -81,7 +81,7 @@
     width: 40px;
     margin: 20px;
     height: 20px;
-    background-color: rgb(35, 173, 173);
+    background-color: black;
     justify-content: left;
     border-radius: 20px;
     padding: 2px;
@@ -188,7 +188,7 @@ btn.addEventListener("click", () => {
         mode = "dark"; 
         btn.classList.remove("lightClass");
         btn.classList.add("darkClass");
-        heroDiv.style.background = "black";
+        heroDiv.style.background = "linear-gradient(50deg, #351919, #04045d)";
         heroDiv.style.color = "white";
     }
     else{
@@ -196,7 +196,7 @@ btn.addEventListener("click", () => {
         mode = "light";
         btn.classList.remove("darkClass");
         btn.classList.add("lightClass");
-        heroDiv.style.background = "aqua";
+        heroDiv.style.background = "linear-gradient(50deg, #e03b3b, #0b0bdc)";
         heroDiv.style.color = "black";
     }
 })
