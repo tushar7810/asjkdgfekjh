@@ -22,7 +22,6 @@
       width: 100%;
       min-height: 100vh;
       background: linear-gradient(50deg, #1d0000, #20205b);
-      background: url(WhatsApp\ Image\ 2024-04-07\ at\ 21.56.03_b8ae28b9.jpg);
       background-position: center;
       background: linear-gradient(50deg, #520707, #0e0e5e);
       display: flex;
@@ -75,9 +74,63 @@
     #year {
       font-size: 40px;
     }
+    /* light dark mode */
+    #toggleBox{
+    display: flex;
+    align-self: flex-start;
+    width: 40px;
+    margin: 20px;
+    height: 20px;
+    background-color: rgb(35, 173, 173);
+    justify-content: left;
+    border-radius: 20px;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+#toggle{
+    position: relative;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: solid white;
+}
+.lightClass{
+    animation: endToLeft 0.4s ease 0s 1 normal backwards;
+}
+.darkClass{
+    animation: leftToEnd 0.4s ease 0s 1 normal forwards;
+}
+@keyframes leftToEnd {
+    from{
+      left: 0px;  
+      background-color: rgb(241, 246, 246);
+      border:solid white;
+    }
+    to{
+        left: 19px;
+        background-color: rgb(28, 8, 117);
+        border: solid rgb(28, 8, 117);
+    }
+}
+@keyframes endToLeft {
+    from{
+        left: 20px;
+        background-color: rgb(28, 8, 117);
+        border: solid rgb(28, 8, 117);
+    }
+    to{
+        left: 0px;
+        background-color: white;
+        border:solid white;
+    }
+}
   </style>
   <body>
     <div class="hero">
+      <div id="toggleBox">
+        <button id="toggle"></button>
+      </div>
       <div class="calender">
         <div class="left">
           <p id="date">01</p>
@@ -123,6 +176,30 @@
       day.innerHTML = weekDays[today.getDay()];
       month.innerHTML = allMonths[today.getMonth()];
       year.innerHTML = today.getFullYear();
+//Light dark mode
+      let btn = document.querySelector("#toggle");
+let btnBox = document.querySelector("#toggleBox");
+let heroDiv = document.querySelector(".hero");
+let mode = "light";
+
+btn.addEventListener("click", () => {
+    if(mode === "light"){
+      console.log(mode);
+        mode = "dark"; 
+        btn.classList.remove("lightClass");
+        btn.classList.add("darkClass");
+        heroDiv.style.backgroundColor = "black";
+        heroDiv.style.color = "white";
+    }
+    else{
+        console.log(mode);
+        mode = "light";
+        btn.classList.remove("darkClass");
+        btn.classList.add("lightClass");
+        heroDiv.style.backgroundColor = "white";
+        heroDiv.style.color = "black";
+    }
+})
     </script>
   </body>
 </html>
