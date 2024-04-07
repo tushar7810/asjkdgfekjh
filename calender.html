@@ -21,7 +21,7 @@
     .hero {
       width: 100%;
       min-height: 100vh;
-      background: linear-gradient(50deg, #1d0000, #20205b);
+
       background-position: center;
       background: linear-gradient(50deg, #520707, #0e0e5e);
       display: flex;
@@ -178,7 +178,7 @@
       year.innerHTML = today.getFullYear();
 //Light dark mode
       let btn = document.querySelector("#toggle");
-let btnBox = document.querySelector("#toggleBox");
+      let btnBox = document.querySelector("#toggleBox");
 let heroDiv = document.querySelector(".hero");
 let mode = "light";
 
@@ -188,7 +188,7 @@ btn.addEventListener("click", () => {
         mode = "dark"; 
         btn.classList.remove("lightClass");
         btn.classList.add("darkClass");
-        heroDiv.style.backgroundColor = "black";
+        heroDiv.style.background = "black";
         heroDiv.style.color = "white";
     }
     else{
@@ -196,7 +196,7 @@ btn.addEventListener("click", () => {
         mode = "light";
         btn.classList.remove("darkClass");
         btn.classList.add("lightClass");
-        heroDiv.style.backgroundColor = "white";
+        heroDiv.style.background = "aqua";
         heroDiv.style.color = "black";
     }
 })
