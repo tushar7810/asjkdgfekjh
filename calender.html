@@ -1,205 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Edu+TAS+Beginner&family=Galada&family=Pixelify+Sans&family=Poppins:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      font-family: "Poppins", sans-serif;
-      box-sizing: border-box;
-    }
-    .hero {
-      width: 100%;
-      min-height: 100vh;
 
-      background-position: center;
-      background: linear-gradient(50deg, #520707, #0e0e5e);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .calender {
-      width: 300px;
-      height: 250px;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      border-radius: 10px;
-    }
-    .left,
-    .right {
-      width: 50%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      flex-direction: column;
-    }
-    .right {
-      background-color: rgb(243, 36, 0);
-      color: rgb(210, 203, 203);
-      border-top-right-radius: 10px;
-      border-bottom-right-radius: 10px;
-    }
-    .left {
-      width: 58%;
-    }
-    #date {
-      font-size: 100px;
-      color: #1d0000;
-    }
-    #day {
-      color: #00d5ff;
-      font-weight: 600;
-    }
-    #month {
-      font-size: 38px;
-      line-height: 85px;
-    }
-    #month:hover {
-      transform: scale(1.1);
-      transition: ease-in-out 0.6s;
-    }
-    #year {
-      font-size: 40px;
-    }
-    /* light dark mode */
-    #toggleBox{
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Edu+TAS+Beginner&family=Galada&family=Pixelify+Sans&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet" />
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+  }
+
+  .hero {
+    width: 100%;
+    min-height: 100vh;
+
+    background-position: center;
+    background: linear-gradient(50deg, #e03b3b, #0b0bdc);
     display: flex;
-    align-self: flex-start;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .calender {
+    width: 300px;
+    height: 250px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+  }
+
+  .left,
+  .right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-direction: column;
+  }
+
+  .right {
+    background-color: rgb(243, 36, 0);
+    color: rgb(210, 203, 203);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .left {
+    width: 58%;
+  }
+
+  #date {
+    font-size: 100px;
+    color: #1d0000;
+  }
+
+  #day {
+    color: #00d5ff;
+    font-weight: 600;
+  }
+
+  #month {
+    font-size: 38px;
+    line-height: 85px;
+  }
+
+  #month:hover {
+    transform: scale(1.1);
+    transition: ease-in-out 0.6s;
+  }
+
+  #year {
+    font-size: 40px;
+  }
+
+  /* light dark mode */
+  #toggleBox {
+    display: flex;
+    align-self: self-start;
     width: 40px;
     margin: 20px;
     height: 20px;
-    background-color: black;
+    background-color: rgb(28, 8, 117);
     justify-content: left;
     border-radius: 20px;
-    padding: 2px;
+    padding: 2.5px;
     box-sizing: border-box;
-}
+  }
 
-#toggle{
+  #toggle {
     position: relative;
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    border: solid white;
-}
-.lightClass{
+    border: solid rgb(165, 159, 159);
+    background-color: rgb(165,159,159);
+  }
+
+  .lightClass {
     animation: endToLeft 0.4s ease 0s 1 normal backwards;
-}
-.darkClass{
+  }
+
+  .darkClass {
     animation: leftToEnd 0.4s ease 0s 1 normal forwards;
-}
-@keyframes leftToEnd {
-    from{
-      left: 0px;  
-      background-color: rgb(241, 246, 246);
-      border:solid white;
+  }
+
+  @keyframes leftToEnd {
+    from {
+      left: 0px;
+      background-color: rgb(165,159,159);
+      border: solid rgb(165, 159, 159);
     }
-    to{
-        left: 19px;
-        background-color: rgb(28, 8, 117);
-        border: solid rgb(28, 8, 117);
+
+    to {
+      left: 20px;
+      background-color: black;
+      border: solid black;
     }
-}
-@keyframes endToLeft {
-    from{
-        left: 20px;
-        background-color: rgb(28, 8, 117);
-        border: solid rgb(28, 8, 117);
+  }
+
+  @keyframes endToLeft {
+    from {
+      left: 20px;
+      background-color: black;
+      border: solid black;
     }
-    to{
-        left: 0px;
-        background-color: white;
-        border:solid white;
+
+    to {
+      left: 0px;
+      background-color: rgb(165, 159, 159);
+      border: solid rgb(165, 159, 159);
     }
-}
-  </style>
-  <body>
-    <div class="hero">
-      <div id="toggleBox">
-        <button id="toggle"></button>
+  }
+</style>
+
+<body>
+  <div class="hero">
+    <div id="toggleBox">
+      <button id="toggle"></button>
+    </div>
+    <div class="calender">
+      <div class="left">
+        <p id="date">01</p>
+        <p id="day">Sunday</p>
       </div>
-      <div class="calender">
-        <div class="left">
-          <p id="date">01</p>
-          <p id="day">Sunday</p>
-        </div>
-        <div class="right">
-          <p id="month">January</p>
-          <p id="year">2020</p>
-        </div>
+      <div class="right">
+        <p id="month">January</p>
+        <p id="year">2020</p>
       </div>
     </div>
-    <script>
-      let date = document.getElementById("date");
-      let day = document.getElementById("day");
-      let month = document.getElementById("month");
-      let year = document.getElementById("year");
-      let weekDays = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ];
-      let allMonths = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "Auguest",
-        "September",
-        "October",
-        "November",
-        "December",
-      ];
+  </div>
+  <script>
+    let date = document.getElementById("date");
+    let day = document.getElementById("day");
+    let month = document.getElementById("month");
+    let year = document.getElementById("year");
+    let weekDays = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    let allMonths = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "Auguest",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
 
-      let today = new Date();
-      date.innerHTML = (today.getDate() < 10 ? "0" : "") + today.getDate();
-      day.innerHTML = weekDays[today.getDay()];
-      month.innerHTML = allMonths[today.getMonth()];
-      year.innerHTML = today.getFullYear();
-//Light dark mode
-      let btn = document.querySelector("#toggle");
-      let btnBox = document.querySelector("#toggleBox");
-let heroDiv = document.querySelector(".hero");
-let mode = "light";
+    let today = new Date();
+    date.innerHTML = (today.getDate() < 10 ? "0" : "") + today.getDate();
+    day.innerHTML = weekDays[today.getDay()];
+    month.innerHTML = allMonths[today.getMonth()];
+    year.innerHTML = today.getFullYear();
+    //Light dark mode
+    let btn = document.querySelector("#toggle");
+    let btnBox = document.querySelector("#toggleBox");
+    let heroDiv = document.querySelector(".hero");
+    let mode = "light";
 
-btn.addEventListener("click", () => {
-    if(mode === "light"){
-      console.log(mode);
-        mode = "dark"; 
+    btn.addEventListener("click", () => {
+      if (mode === "light") {
+        mode = "dark";
         btn.classList.remove("lightClass");
         btn.classList.add("darkClass");
         heroDiv.style.background = "linear-gradient(50deg, #351919, #04045d)";
         heroDiv.style.color = "white";
-    }
-    else{
-        console.log(mode);
+        btnBox.style.background = "blue";
+      }
+      else {
         mode = "light";
         btn.classList.remove("darkClass");
         btn.classList.add("lightClass");
         heroDiv.style.background = "linear-gradient(50deg, #e03b3b, #0b0bdc)";
         heroDiv.style.color = "black";
-    }
-})
-    </script>
-  </body>
+        btnBox.style.background = "rgb(28,8,117)";
+      }
+    })
+  </script>
+</body>
 </html>
